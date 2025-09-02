@@ -573,26 +573,83 @@ footer {
     cursor: pointer;
 }
 
+/* Sostituisci la parte finale del tuo CSS (dalle righe del menu hamburger) con questo: */
+
+/* Menu hamburger (nascosto su desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #4A433A;
+    padding: 5px;
+}
+
+/* Pulsante chiudi menu (nascosto su desktop) */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #4A433A;
+}
+
 /* Responsive per mobile */
 @media (max-width: 768px) {
+    header {
+        padding: 20px;
+        position: relative;
+    }
+
     .menu-toggle {
         display: block;
     }
-    .nav-list {
-        position: absolute;
-        top: 60px;
+
+    .close-menu {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 60px);
-        background-color: #4A433A;
+        height: 100vh;
+        background-color: #F8F3EC;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 40px;
         transition: left 0.3s ease;
+        border-right: 1px solid #EBE6E0;
+        z-index: 999;
     }
-    .nav-list.active {
+
+    nav ul.active {
         left: 0;
     }
-    .nav-list li {
-        margin: 20px 0;
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul a {
+        font-size: 1.5em;
+        padding: 10px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .hero-text-block h1 {
+        font-size: 2.5em;
+    }
+
+    .contact-links {
+        flex-direction: column;
     }
 }
