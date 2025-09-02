@@ -10,17 +10,20 @@
     <div id="main-content-wrapper">
         <header>
             <a href="#" class="logo">Alessandro Musta</a>
-            <nav>
-                <ul>
-                    <li><a href="#about">Chi sono</a></li>
-                    <li><a href="#progetti">Progetti Clienti</a></li>
-                    <li><a href="#casi-studio">Progetti Personali</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-                <div class="menu-toggle" id="mobile-menu">
-    ☰
-  </div>
-            </nav>
+            <!-- Sostituisci la sezione <nav> nel tuo HTML con questa: -->
+<nav>
+    <ul id="nav-menu">
+        <li><a href="#about">Chi sono</a></li>
+        <li><a href="#progetti">Progetti Clienti</a></li>
+        <li><a href="#casi-studio">Progetti Personali</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <!-- Pulsante per chiudere il menu (visibile solo su mobile) -->
+        <button class="close-menu" onclick="toggleMenu()">&times;</button>
+    </ul>
+    <button class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+        ☰
+    </button>
+</nav>
         </header>
 
         <section id="hero">
@@ -294,3 +297,22 @@
             <p>&copy; 2025 Alessandro Musta. Tutti i diritti riservati.</p>
         </footer>
     </div>
+
+
+    <!-- Aggiungi questo script JavaScript prima del tag </body> -->
+<script>
+function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Chiudi il menu quando si clicca su un link
+document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('active');
+    });
+});
+</script>
+
+</body>
+</html>
