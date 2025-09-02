@@ -599,6 +599,17 @@ footer {
     color: #4A433A;
 }
 
+/* Menu hamburger (nascosto su desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #4A433A;
+    padding: 5px;
+}
+
 /* Responsive per mobile */
 @media (max-width: 768px) {
     header {
@@ -610,8 +621,17 @@ footer {
         display: block;
     }
 
+    /* SPOSTA QUESTA REGOLA QUI DENTRO */
     .close-menu {
         display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #4A433A;
     }
 
     nav ul {
@@ -643,13 +663,5 @@ footer {
         padding: 10px 20px;
         display: block;
         text-align: center;
-    }
-
-    .hero-text-block h1 {
-        font-size: 2.5em;
-    }
-
-    .contact-links {
-        flex-direction: column;
     }
 }
