@@ -542,3 +542,57 @@ footer {
         flex-direction: column;
     }
 }
+/* Navbar base */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A433A; /* colore a piacere */
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-list li {
+    margin-left: 20px;
+}
+
+.navbar .nav-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu hamburger (inizialmente nascosto su desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-list {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #4A433A;
+        flex-direction: column;
+        align-items: center;
+        transition: left 0.3s ease;
+    }
+    .nav-list.active {
+        left: 0;
+    }
+    .nav-list li {
+        margin: 20px 0;
+    }
+}
